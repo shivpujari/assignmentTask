@@ -1,0 +1,110 @@
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.bar-chart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .bar-chart-container h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bar-chart-container h1 {
+        font-size: 1.2rem;
+    }
+}
+
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+    .button {
+        margin-top: 10px;
+    }
+}
+
+
+:host {
+    ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+        padding: 0.3rem 0.3rem;
+    }
+
+    ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+        padding: 0.3rem 0.3rem;
+    }
+
+    ::ng-deep .p-paginator-bottom {
+        display: flex;
+        justify-content: end;
+
+    }
+
+    ::ng-deep .p-toast {
+        width: 18rem;
+        height: 50px;
+    }
+
+
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0px 15px;
+}
+
+.p-table {
+    width: 100%;
+}
+
+.actions-column {
+    text-align: right;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+    .table-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .actions-column {
+        text-align: center;
+    }
+
+    .p-table td,
+    .p-table th {
+        padding: 10px;
+    }
+
+    .form-footer-button {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .table-container {
+        // width: fit-content;
+    }
+
+    .p-table {
+        font-size: 0.9rem;
+
+    }
+
+
+    .actions-column {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+}

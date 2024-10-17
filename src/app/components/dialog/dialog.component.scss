@@ -1,0 +1,26 @@
+.form-container {
+    width: 350px;
+}
+
+.p-error {
+    color: red;
+    font-size: 12px;
+    margin-top: -5px;
+}
+
+.p-field {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 0px 0px;
+}
+
+.p-field label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-footer-button {
+    display: flex;
+    justify-content: end;
+    margin: 10px 0px 0px 0px;
+}

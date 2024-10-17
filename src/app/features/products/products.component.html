@@ -1,0 +1,56 @@
+<div class="header">
+    <h1>Bar chart with Products</h1>
+    <p-toast></p-toast>
+</div>
+
+<div class="bar-chart-container">
+    <ngx-charts-bar-vertical 
+      [view]="barChartConfig.view" 
+      [results]="barChartData" 
+      [gradient]="barChartConfig.gradient" 
+      [xAxis]="barChartConfig.showXAxis"
+      [yAxis]="barChartConfig.showYAxis" 
+      [showXAxisLabel]="barChartConfig.showXAxisLabel" 
+      [showYAxisLabel]="barChartConfig.showYAxisLabel"
+      [xAxisLabel]="barChartConfig.xAxisLabel" 
+      [yAxisLabel]="barChartConfig.yAxisLabel">
+  </ngx-charts-bar-vertical>
+</div>
+
+
+<div class="table-header">
+    <h1>Product List</h1>
+    <p-button class="button" label="Add Product" icon="pi pi-plus" (click)="openDialog()"></p-button>
+</div>
+
+<p-dialog header="Add Product" [dismissableMask]="true" [(visible)]="showDialog" [modal]="true">
+    <app-dialog [product]="selectedProduct" (dialogClosed)="onDialogClosed($event)">
+    </app-dialog>
+</p-dialog>
+
+<div class="table-container">
+    <p-table class="p-table" styleClass="p-datatable-striped" [value]="products" [paginator]="true" [rows]="10"
+        [rowsPerPageOptions]="[5, 10, 20]">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th class="actions-column">Actions</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.category }}</td>
+                <td class="actions-column">
+                    <button pButton icon="pi pi-pencil" (click)="openDialog(product)"></button>
+                    <button pButton icon="pi pi-trash" style="margin-left: 10px;"
+                        (click)="deleteProduct(product.id)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

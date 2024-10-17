@@ -1,0 +1,51 @@
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="p-field">
+      <label for="name">Name: </label>
+      <input pInputText id="name" formControlName="name" />
+      @if(form.controls['name'].touched && form.controls['name'].invalid){
+      <div class="p-error">
+        @if(form.controls['name'].errors?.['required']){
+        <p>Product Name is required</p>
+        }
+        @if(form.controls['name'].errors?.['minlength']){
+        <p>Name must be 3 characters long</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="p-field">
+      <label for="price">Price: </label>
+      <input id="price" type="number" pInputText formControlName="price" />
+      @if(form.controls['price'].touched && form.controls['price'].invalid){
+      <div class="p-error">
+        @if(form.controls['price'].errors?.['required']){
+        <p>Product Price is required</p>
+        }
+        @if(form.controls['price'].errors?.['min']){
+        <p>Price should be minimum 100</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="p-field">
+      <label for="category">Category: </label>
+      <input id="category" pInputText formControlName="category" />
+      @if(form.controls['category'].touched && form.controls['category'].invalid){
+      <div class="p-error">
+        @if(form.controls['category'].errors?.['required']){
+        <p>Product Category is required</p>
+        }
+        @if(form.controls['category'].errors?.['minlength']){
+        <p>Category must be 3 characters long</p>
+        }
+      </div>
+      }
+    </div>
+   <div class="form-footer-button">
+    <button pButton type="submit" [disabled]="form.invalid" class="p-button-success">
+      {{ (mode === dialogModes.Add) ? 'Add' : 'Update' }}
+    </button>
+   </div>
+  </form>
+</div>

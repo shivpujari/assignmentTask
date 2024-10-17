@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": "3",
+      "name": "Product C",
+      "price": 100,
+      "category": "Clothing"
+    },
+    {
+      "id": "4",
+      "name": "Product D",
+      "price": 250,
+      "category": "Clothing"
+    },
+    {
+      "id": "5",
+      "name": "Product E",
+      "price": 300,
+      "category": "Home Appliances"
+    },
+    {
+      "id": "6",
+      "name": "Product F",
+      "price": 120,
+      "category": "Home Appliances"
+    },
+    {
+      "id": "7",
+      "name": "Product G",
+      "price": 400,
+      "category": "Beauty"
+    },
+    {
+      "id": "8",
+      "name": "Product H",
+      "price": 600,
+      "category": "Beauty"
+    },
+    {
+      "id": "9",
+      "name": "Product I",
+      "price": 75,
+      "category": "Sports"
+    },
+    {
+      "id": "10",
+      "name": "Product J",
+      "price": 180,
+      "category": "Sports"
+    },
+    {
+      "id": "11",
+      "name": "Product K",
+      "price": 130,
+      "category": "Toys"
+    },
+    {
+      "id": "12",
+      "name": "Product L",
+      "price": 250,
+      "category": "Toys"
+    },
+    {
+      "id": "13",
+      "name": "Product M",
+      "price": 500,
+      "category": "Furniture"
+    },
+    {
+      "id": "14",
+      "name": "Product N",
+      "price": 700,
+      "category": "Furniture"
+    },
+    {
+      "id": "15",
+      "name": "Product O",
+      "price": 90,
+      "category": "Books"
+    },
+    {
+      "id": "16",
+      "name": "Product P",
+      "price": 45,
+      "category": "Books"
+    },
+    {
+      "id": "17",
+      "name": "Product Q",
+      "price": 220,
+      "category": "Automotive"
+    },
+    {
+      "id": "18",
+      "name": "Product R",
+      "price": 330,
+      "category": "Automotive"
+    },
+    {
+      "id": "19",
+      "name": "Product S",
+      "price": 125,
+      "category": "Health"
+    },
+    {
+      "id": "20",
+      "name": "Product T",
+      "price": 350,
+      "category": "Health"
+    },
+    {
+      "id": "386b",
+      "name": "Product A",
+      "price": 222,
+      "category": "senseless"
+    },
+    {
+      "id": "7391",
+      "name": "222",
+      "price": 222,
+      "category": "sss"
+    }
+  ]
+}
