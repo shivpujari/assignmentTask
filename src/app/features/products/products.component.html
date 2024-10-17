@@ -23,7 +23,7 @@
     <p-button class="button" label="Add Product" icon="pi pi-plus" (click)="openDialog()"></p-button>
 </div>
 
-<p-dialog header="Add Product" [dismissableMask]="true" [(visible)]="showDialog" [modal]="true">
+<p-dialog [header]="selectedProduct ? 'Edit Product' : 'Add Product'" [dismissableMask]="true" [(visible)]="showDialog" [modal]="true">
     <app-dialog [product]="selectedProduct" (dialogClosed)="onDialogClosed($event)">
     </app-dialog>
 </p-dialog>
