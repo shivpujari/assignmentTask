@@ -25,8 +25,8 @@ export class ProductsComponent {
   selectedProduct: Product | null = null
   showDialog: boolean = false
 
-  barChartData: any[] = []
-  barChartConfig = {
+  chartData: any[] = []
+  chartConfig = {
     view: [350, 300] as [number, number],
     showXAxis: true,
     showYAxis: true,
@@ -58,7 +58,7 @@ export class ProductsComponent {
         if (products && products.length) {
           this.products = products
         }
-        this.barChartData = products.map(product => ({
+        this.chartData = products.map(product => ({
           name: product.name,
           value: product.price
         }));
@@ -73,9 +73,11 @@ export class ProductsComponent {
     this.productService.addProduct(product).subscribe({
       next: () => {
         this.loadProducts()
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Product added successfully' })
       },
       error: (error: any) => {
         console.log(`addProduct() failed => `, error)
+        this.messageService.add({ severity: 'danger', summary: 'Failure', detail: 'Failed to add Product' })
       }
     })
   }
@@ -84,9 +86,11 @@ export class ProductsComponent {
     this.productService.updateProduct(product).subscribe({
       next: () => {
         this.loadProducts()
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Product updated successfully' });
       },
       error: (error: any) => {
         console.log(`updateProduct() failed => `, error)
+        this.messageService.add({ severity: 'danger', summary: 'Failure', detail: 'Failed to update Product' })
       }
     })
   }
@@ -95,9 +99,11 @@ export class ProductsComponent {
     this.productService.deleteProduct(id).subscribe({
       next: () => {
         this.loadProducts()
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Product deleted successfully' });
       },
       error: (error: any) => {
         console.log(`deleteProduct() failed => `, error)
+        this.messageService.add({ severity: 'danger', summary: 'Failure', detail: 'Failed to delete Product' })
       }
     })
   }
@@ -110,24 +116,23 @@ export class ProductsComponent {
   onDialogClosed(product: Product): void {
     if (!product?.id) {
       this.addProduct(product)
-      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Product added successfully' })
-      
     } else {
       this.updateProduct(product)
-      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Product updated successfully' });
     }
     this.showDialog = false
   }
 
   updateChartSize(): void {
-    const width = window.innerWidth
-
-    if (width <= 480) {
-      this.barChartConfig.view = [300, 300]  // For small screens
-    } else if (width <= 768) {
-      this.barChartConfig.view = [500, 300]  // For medium screens
-    } else {
-      this.barChartConfig.view = [700, 400]  // For large screens
+    const width = window.innerWidth;
+    switch (true) {
+      case (width <= 480):
+        this.chartConfig.view = [300, 300];  // For small screens
+        break;
+      case (width <= 768):
+        this.chartConfig.view = [500, 300];  // For medium screens
+        break;
+      default:
+        this.chartConfig.view = [700, 400];  // For large screens
     }
-  }
+  }  
 }

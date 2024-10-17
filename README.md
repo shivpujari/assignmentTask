@@ -1,27 +1,58 @@
-# TableChartFlow
+# Angular CRUD Application with PrimeNG and ngx-charts
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+## Project Description
 
-## Development server
+This is a simple Angular CRUD (Create, Read, Update, Delete) application that showcases the use of PrimeNG for UI components and ngx-charts for data visualization. The application allows users to manage a list of products with fields such as name, price, and category. It features a responsive PrimeNG table to display the products and a bar chart that dynamically updates based on the changes made to the table.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Features
 
-## Code scaffolding
+- **Display Products**: View a list of products in a PrimeNG table.
+- **Add Products**: A form to input new product details.
+- **Edit Products**: Option to update existing product information.
+- **Delete Products**: Remove products from the list.
+- **Data Synchronization**: The ngx-charts bar chart updates in real-time based on the products in the table.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+- Angular
+- PrimeNG
+- ngx-charts
+- JSON Server (for mocking API)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Prerequisites
 
-## Running unit tests
+Before running the application, ensure you have the following installed on your machine:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js (version 18.x.x or later)
+- Angular CLI (version 18 )
 
-## Running end-to-end tests
+## Getting Started
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Follow these steps to clone and run the application locally:
 
-## Further help
+### 1. Clone the repository
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Open your terminal and run the following command:
+
+git clone https://github.com/shivpujari/assignmentTask.git
+
+
+### 2. Navigate to the project directory
+
+### 3. Install dependencies
+run the command "npm install"
+
+### 4. To the mock API you need to run the JSON server 
+go to the server folder and open the terminal and run the command "json-server --watch db.json"
+The JSON server will start at http://localhost:3000.
+
+
+### 5. Run your application 
+ng serve
+Visit "http://localhost:4200"
+
+
+
+
+
+
