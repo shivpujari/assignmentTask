@@ -1,12 +1,6 @@
 {
   "products": [
     {
-      "name": "Product C",
-      "price": 100,
-      "category": "Clothing here fghjkl",
-      "id": "3"
-    },
-    {
       "id": "4",
       "name": "Product D",
       "price": 250,
