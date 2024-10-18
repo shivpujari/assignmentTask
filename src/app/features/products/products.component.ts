@@ -95,18 +95,23 @@ export class ProductsComponent {
     })
   }
 
-  deleteProduct(id: any): void {
+  deleteProduct(id: number): void {
     this.productService.deleteProduct(id).subscribe({
-      next: () => {
-        this.loadProducts()
+      next: (updatedProducts: Product[]) => {
+        this.products = updatedProducts; // Update the products array with the new list
+        this.chartData = updatedProducts.map(product => ({
+          name: product.name,
+          value: product.price
+        }));
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Product deleted successfully' });
       },
       error: (error: any) => {
-        console.log(`deleteProduct() failed => `, error)
-        this.messageService.add({ severity: 'danger', summary: 'Failure', detail: 'Failed to delete Product' })
+        console.log(`deleteProduct() failed => `, error);
+        this.messageService.add({ severity: 'danger', summary: 'Failure', detail: 'Failed to delete Product' });
       }
-    })
+    });
   }
+  
 
   openDialog(product?: Product): void {
     this.selectedProduct = product || null
