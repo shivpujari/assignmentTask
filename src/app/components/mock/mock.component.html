@@ -1,0 +1,25 @@
+<div>
+    <button (click)="openDialog()">Add Product</button>
+</div>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+    </tr>
+    @for(data of product; track data.id){
+    <tr>
+        <td>{{data.name}}</td>
+        <td>{{data.price}}</td>
+        <td>{{data.category}}</td>
+        <td><button (click)="openDialog(data)">Edit</button></td>
+        <td><button (click)="deleteProduct(data.id)">Delete</button></td>
+    </tr>
+    }
+</table>
+@if(showDialog){
+<app-mock-dialog [product]="selectedProduct" (dialogClosed)="onDialogClosed($event)"></app-mock-dialog>
+}
+
+
+<button (click)="sendData()">Click</button>

@@ -1,0 +1,17 @@
+<div style="height: 200px; width: 200px; border: 1px solid black;">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+        <div>
+            <label for="name">Price</label>
+            <input type="text" id="price" formControlName="price">
+        </div>
+        <div>
+            <label for="name">Category</label>
+            <input type="text" id="category" formControlName="category">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>

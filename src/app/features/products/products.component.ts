@@ -44,12 +44,12 @@ export class ProductsComponent {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    this.updateChartSize();
+    this.updateChartSize()
   }
 
   ngOnInit(): void {
     this.loadProducts()
-    this.updateChartSize();
+    this.updateChartSize()
   }
 
   loadProducts(): void {
@@ -71,7 +71,7 @@ export class ProductsComponent {
 
   addProduct(product: Product): void {
     this.productService.addProduct(product).subscribe({
-      next: () => {
+      next: () => { 
         this.loadProducts()
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Product added successfully' })
       },
@@ -111,7 +111,6 @@ export class ProductsComponent {
       }
     });
   }
-  
 
   openDialog(product?: Product): void {
     this.selectedProduct = product || null
@@ -139,5 +138,5 @@ export class ProductsComponent {
       default:
         this.chartConfig.view = [700, 400];  // For large screens
     }
-  }  
+  }
 }
